@@ -1,34 +1,737 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>gulp-scss-starter</title>
-        <meta name="theme-color" content="#fff">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
-        <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
-        <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
-        <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
-        <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
-        <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
-        <link rel="stylesheet" href="styles/main.css">
-    </head>
-    <body>
-        @@include("../blocks/modules/header/header.html")
-        @@include("../blocks/modules/footer/footer.html")
-        <script src="js/vendor.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>gulp-scss-starter</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__items">
+                <a href="#" class="header__logo">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+                <div class="header__contacts">
+                    <div class="time fa-block">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <div class="text">
+                            <p>Пн - Суб с 8:00 до 18:00</p>
+                            <p>Вс 9:00 до 15:00</p>
+                        </div>
+                    </div>
+                    <div class="phones">
+                        <div class="phone">
+                            <a href="tel:+7 978 824 31 65 " class="fa-block">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>+7 978 824 31 65 </span>
+                            </a>
+                            <div class="fa-block">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>г. Симферополь,<br>Пр.Победы 147</span>
+                            </div>
+                        </div>
+                        <button class="btn js-open-modal" data-modal="modal-callback">
+                            <span>Обратный звонок</span>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn js-open-modal" data-modal="modal-callback">
+                    <span>Обратный звонок</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </button>
+                <div class="mobile-nav-button">
+                    <div class="mobile-nav-button__line"></div>
+                    <div class="mobile-nav-button__line"></div>
+                    <div class="mobile-nav-button__line"></div>
+                </div>
+            </div>
+            <nav class="mobile-menu">
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">contacts</a></li>
+                    <li><a href="#">123</a></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="header__menu">
+            <div class="wrapper">
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">contacts</a></li>
+                    <li><a href="#">123</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="section-one">
+            <video autoplay muted loop class="video">
+                <source src="img/video.mp4" type="video/mp4">
+            </video>
+            <div class="bg"></div>
+            <div class="wrapper">
+                <div class="section-one__items">
+                    <div class="content">
+                        <h1>Чаще всего вы ищите натяжные потолки и ничего не знаете о подвесных.</h1>
+                        <h2>А ведь они в разы богаче выглядят.</h2>
+                        <h3>А стоят не на много дороже! Только у нас в Крыму в наличии все что представлено на сайте
+                        </h3>
+                        <button class="btn js-open-modal" data-modal="modal-callback">
+                            <span>Обратный звонок</span>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section why">
+            <div class="wrapper">
+                <h2 class="h2">Почему стоит выбирать подвесные потолки</h2>
+                <div class="why__items">
+                    <div class="why__items__item">
+                        <img src="img/pic-1.jpg" alt="pic">
+                    </div>
+                    <div class="why__items__item why__items__item--text">
+                        <ul>
+                            <li>Произвести монтаж натяжных потолков своими силами не получится, для этого придется
+                                привлекать
+                                специалистов. Для монтажа таких потолков требуется специальное оборудование и опыт
+                                установки
+                                таких конструкций.
+                            </li>
+                            <li>Монтаж подвесных потолков вполне можно соорудить собственными руками, сэкономив на
+                                оплате
+                                работ
+                                мастеров
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="why__items">
+                    <div class="why__items__item">
+                        <img src="img/pic-2.jpg" alt="pic">
+                    </div>
+                    <div class="why__items__item why__items__item--text">
+                        <ul>
+                            <li>Пленка из ПВХ ужасно боится холода – уже при нуле она теряет эластичность, становясь
+                                хрупкой. А
+                                если грянуло минус 20, то полотно просто растрескивается. Так что нельзя натяжные
+                                потолки
+                                устраивать там, где отопления не имеется (на лоджии, к примеру).
+                            </li>
+                            <li>Подвесные потолки этим не страдают – они вполне могут выдерживать температурные
+                                перепады.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="why__items">
+                    <div class="why__items__item">
+                        <img src="img/pic-1.jpg" alt="pic">
+                    </div>
+                    <div class="why__items__item why__items__item--text">
+                        <ul>
+                            <li>Проколоть поливинилхлоридную пленку чем-то острым или твердым – проще простого. Дырки
+                                могут
+                                появиться от чего угодно – даже от выстрела из детского лука или игрушечного пистолета с
+                                пульками из пластмассы. Можно, конечно, эти дырки заклеивать, но это не очень красиво,
+                                да и
+                                защищенность от воды пропадет.
+                            </li>
+                            <li>материалы применяемые в подвесных конструкциях более прочные, однако сильных ударов
+                                боятся и
+                                они
+                                – не стоит бросать в такой потолок тяжелые предметы.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section portfolio">
+            <div class="wrapper">
+                <h2 class="h2">Наши работы</h2>
+                <ul class="tabs" data-tabgroup="first-tab-group">
+                    <li>
+                        <a rel="#tab-1" class="active tab">
+                            <h3>Кухни</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="#tab-2" class="tab">
+                            <h3>Санузлы</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="#tab-3" class="tab">
+                            <h3>Куббота</h3>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tabgroup" id="first-tab-group">
+                    <div class="tab-hidden portfolio-slider" id="tab-1">
+                        <div class="portfolio__items">
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-hidden portfolio-slider" id="tab-2">
+                        <div class="portfolio__items">
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-hidden" id="tab-3">
+                        <div class="portfolio__items">
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                            <a href="img/pic-1.jpg" data-fancybox="gallery" class="item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section stock">
+            <h2 class="h2">У нас на складе</h2>
+            <div class="stock__items">
+                <a href="img/pic-1.jpg" data-fancybox="gallery" class="stock__items__item">
+                    <img src="img/pic-1.jpg" alt="pic">
+                    <div class="hover-block">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a href="img/pic-1.jpg" data-fancybox="gallery" class="stock__items__item">
+                    <img src="img/pic-1.jpg" alt="pic">
+                    <div class="hover-block">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a href="img/pic-1.jpg" data-fancybox="gallery" class="stock__items__item">
+                    <img src="img/pic-1.jpg" alt="pic">
+                    <div class="hover-block">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a href="img/pic-1.jpg" data-fancybox="gallery" class="stock__items__item">
+                    <img src="img/pic-1.jpg" alt="pic">
+                    <div class="hover-block">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a href="img/pic-1.jpg" data-fancybox="gallery" class="stock__items__item">
+                    <img src="img/pic-1.jpg" alt="pic">
+                    <div class="hover-block">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a href="img/pic-1.jpg" data-fancybox="gallery" class="stock__items__item">
+                    <img src="img/pic-2.jpg" alt="pic">
+                    <div class="hover-block">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a href="img/pic-1.jpg" data-fancybox="gallery" class="stock__items__item">
+                    <img src="img/pic-1.jpg" alt="pic">
+                    <div class="hover-block">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a href="img/pic-1.jpg" data-fancybox="gallery" class="stock__items__item">
+                    <img src="img/pic-2.jpg" alt="pic">
+                    <div class="hover-block">
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section about-us">
+            <div class="wrapper">
+                <h2 class="h2">О нашей компании</h2>
+                <div class="about-us__items">
+                    <div class="about-us__items__item">
+                        <ul>
+                            <li><i class="fa fa-quote-right" aria-hidden="true"></i>Наша СТО Авторемонта «PDR-SERVICE»
+                                предлагает услугу по технологи PDR (Paintles Dentripaire).
+                            </li>
+                            <li><i class="fa fa-quote-right" aria-hidden="true"></i>Наша СТО Авторемонта «PDR-SERVICE»
+                                предлагает услугу по технологи PDR (Paintles Dentripaire).
+                            </li>
+                            <li><i class="fa fa-quote-right" aria-hidden="true"></i>Наша СТО Авторемонта «PDR-SERVICE»
+                                предлагает услугу по технологи PDR (Paintles Dentripaire).
+                            </li>
+                            <li><i class="fa fa-quote-right" aria-hidden="true"></i>Наша СТО Авторемонта «PDR-SERVICE»
+                                предлагает услугу по технологи PDR (Paintles Dentripaire).
+                            </li>
+                            <li><i class="fa fa-quote-right" aria-hidden="true"></i>Наша СТО Авторемонта «PDR-SERVICE»
+                                предлагает услугу по технологи PDR (Paintles Dentripaire).
+                            </li>
+                            <li><i class="fa fa-quote-right" aria-hidden="true"></i>Наша СТО Авторемонта «PDR-SERVICE»
+                                предлагает услугу по технологи PDR (Paintles Dentripaire).
+                            </li>
+                            <li><i class="fa fa-quote-right" aria-hidden="true"></i>Наша СТО Авторемонта «PDR-SERVICE»
+                                предлагает услугу по технологи PDR (Paintles Dentripaire).
+                            </li>
+                            <li><i class="fa fa-quote-right" aria-hidden="true"></i>Наша СТО Авторемонта «PDR-SERVICE»
+                                предлагает услугу по технологи PDR (Paintles Dentripaire).
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-us__items__item">
+                        <div class="about-us__slider">
+                            <div class="about-us__slider__item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </div>
+                            <div class="about-us__slider__item">
+                                <img src="img/pic-2.jpg" alt="pic">
+                            </div>
+                            <div class="about-us__slider__item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </div>
+                            <div class="about-us__slider__item">
+                                <img src="img/pic-2.jpg" alt="pic">
+                            </div>
+                        </div>
+                        <div class="slider-controll">
+                            <div class="about-us__slider__item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </div>
+                            <div class="about-us__slider__item">
+                                <img src="img/pic-2.jpg" alt="pic">
+                            </div>
+                            <div class="about-us__slider__item">
+                                <img src="img/pic-1.jpg" alt="pic">
+                            </div>
+                            <div class="about-us__slider__item">
+                                <img src="img/pic-2.jpg" alt="pic">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contacts">
+            <div class="wrapper">
+                <h2 class="h2">Наш офис</h2>
+                <div class="header__contacts">
+                    <div class="time fa-block">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <div class="text">
+                            <p>Пн - Суб с 8:00 до 18:00</p>
+                            <p>Вс 9:00 до 15:00</p>
+                        </div>
+                    </div>
+                    <a href="tel:+7 978 824 31 65 " class="fa-block">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>+7 978 824 31 65 </span>
+                    </a>
+                    <div class="fa-block">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span>г. Симферополь,<br>Пр.Победы 147</span>
+                    </div>
+                    <button class="btn js-open-modal" data-modal="modal-callback">Обратный звонок</button>
+                </div>
+                <div class="contacts__items">
+                    <div class="contacts__items__item">
+                        <img src="img/route.gif" alt="gif">
+                    </div>
+                    <div class="contacts__items__item">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A4f865c724734ee263a7a3e20eb50f035f9e61e36622613f886eabf6132880a4e&amp;source=constructor"
+                            width="100%" height="508" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-form">
+            <div class="wrapper">
+                <div class="section-form__items">
+                    <div class="section-form__items__item">
+                        <h2 class="h2">Бесплатная консультация</h2>
+                        <ul>
+                            <li>
+                                <a href="tel:+7 978 824 31 65 " class="messanger">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                    <span>Позвонить</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="messanger js-open-modal" data-modal="modal-callback">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                    <span>Обратный звонок</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="messanger" rel="nofollow noopener" href="https://wa.me/79788243165 "
+                                    title="Whatsapp" target="_blank">
+                                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Whatsapp</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="messanger" rel="nofollow noopener" href="viber://chat?number=%2B79788243165 "
+                                    title="Viber" target="_blank">
+                                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                                    <span>Viber</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:drozdovat63@mail.ru" class="fa-block">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    <span>drozdovat63@mail.ru</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="section-form__items__item">
+                        <img src="img/manager.jpg" alt="pic" class="pic">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section videos">
+            <h2 class="h2">Видео</h2>
+            <div class="videos__items">
+                <a href="https://www.youtube.com/watch?v=8VsxVz6q6yQ" data-fancybox class="videos__items__item">
+                    <img src="img/pic-1.jpg" alt="pic" class="pic">
+                    <div class="text">
+                        <h4>Видео о монтаже</h4>
+                        <p>Краткое описание видео Краткое описание видео</p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=8VsxVz6q6yQ" data-fancybox class="videos__items__item">
+                    <img src="img/pic-1.jpg" alt="pic" class="pic">
+                    <div class="text">
+                        <h4>Видео о монтаже</h4>
+                        <p>Краткое описание видео Краткое описание видео</p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=8VsxVz6q6yQ" data-fancybox class="videos__items__item">
+                    <img src="img/pic-1.jpg" alt="pic" class="pic">
+                    <div class="text">
+                        <h4>Видео о монтаже</h4>
+                        <p>Краткое описание видео Краткое описание видео</p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=8VsxVz6q6yQ" data-fancybox class="videos__items__item">
+                    <img src="img/pic-1.jpg" alt="pic" class="pic">
+                    <div class="text">
+                        <h4>Видео о монтаже</h4>
+                        <p>Краткое описание видео Краткое описание видео</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="calculator">
+            <div class="wrapper">
+                <h2 class="h2">Рассчитать подвесной потолок</h2>
+                <div class="calculator__items">
+                    <div class="calculator__items__item">
+                        <div class="title">1 шаг</div>
+                        <h4>Введите размеры</h4>
+                        <h5>Реечного потолка</h5>
+                        <form class="calc-form">
+                            <div class="block-input">
+                                <input type="text" placeholder="Площадь" class="InS input" value="" required>
+                                <p>м2</p>
+                            </div>
+                            <div class="block-input">
+                                <input type="text" placeholder="Периметр" class="InP input" value="" required>
+                                <p>м</p>
+                            </div>
+                            <div class="block-input">
+                                <select name="width" id="width" class="InW input" required>
+                                    <option value="Ширина рейки">Ширина рейки</option>
+                                    <option value="100">100</option>
+                                    <option value="150">150</option>
+                                </select>
+                            </div>
+                            <div class="block-input">
+                                <select name="long" id="long" class="InL input" required>
+                                    <option value="Длинна рейки">Длинна рейки</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                            <button class="btn calc" type="button" id="calc" disabled="disabled">Рассчитать</button>
+                            <button class="btn reset" type="reset" id="reset">Сброс</button>
+                        </form>
+                    </div>
+                    <div class="calculator__items__item">
+                        <div class="title">2 шаг</div>
+                        <h4>Кол-во комплектующих</h4>
+                        <h5>Реечного потолка</h5>
+                        <div class="calc-form">
+                            <div class="proportions__items">
+                                <div class="proportions__items__item">
+                                    <span>S =</span>
+                                    <span class="rezS">0</span>
+                                    <span>м2</span>
+                                </div>
+                                <div class="proportions__items__item">
+                                    <span>P =</span>
+                                    <span class="rezP">0</span>
+                                    <span>м.п.</span>
+                                </div>
+                            </div>
+                            <div class="table">
+                                <div class="table__title table__row">
+                                    <span>Наименование</span>
+                                    <span>шт</span>
+                                </div>
+                                <div class="table__row">
+                                    <span>Рейка
+                                        <span class="resW">0</span>
+                                        <span>мм</span>*
+                                        <span class="resL">0</span>м
+                                    </span>
+                                    <span class="colR">0</span>
+                                </div>
+                                <div class="table__row">
+                                    <span>Гребенка</span>
+                                    <span class="comb">0</span>
+                                </div>
+                                <div class="table__row">
+                                    <span>Подвесы</span>
+                                    <span class="pendant">0</span>
+                                </div>
+                                <div class="table__row">
+                                    <span>Уголок</span>
+                                    <span class="angle">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="calculator__items__item">
+                        <div class="title">3 шаг</div>
+                        <h4>Получить оптовую цену</h4>
+                        <h5>Реечного потолка</h5>
+                        <div class="calc-form">
+                            <button class="btn" type="button" id="calc">Скачать прайс</button>
+                        </div>
+                    </div> -->
+                </div>
+                <button class="btn download" type="button">Скачать прайс</button>
+            </div>
+        </section>
+
+        <section class="section section-vk">
+            <div class="wrapper">
+                <h2 class="h2">Гостевая книга:</h2>
+                <h4>Здесь можно задать вопрос в ленту или оставить отзыв</h4>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="call-back-widget">
+        <div class="messangers-list-container">
+            <ul class="messangers-list">
+                <li>
+                    <a href="tel:+7 978 824 31 65 " class="messanger">
+                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                        <span>Позвонить</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="messanger js-open-modal" data-modal="modal-callback">
+                        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                        <span>Обратный звонок</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="messanger" rel="nofollow noopener" href="https://wa.me/79788243165 " title="Whatsapp"
+                        target="_blank">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        <span>Whatsapp</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="messanger" rel="nofollow noopener" href="viber://chat?number=%2B79788243165 "
+                        title="Viber" target="_blank">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        <span>Viber</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:drozdovat63@mail.ru" class="fa-block">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <span>drozdovat63@mail.ru</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="call-back__button">
+            <div class="hidden">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+            <div class="close">
+                <svg x="0px" y="0px" width="24" height="24" viewBox="0 0 122.878 122.88"
+                    enable-background="new 0 0 122.878 122.88" xml:space="preserve">
+                    <g>
+                        <path fill="rgb(228, 177, 86)"
+                            d="M1.426,8.313c-1.901-1.901-1.901-4.984,0-6.886c1.901-1.902,4.984-1.902,6.886,0l53.127,53.127l53.127-53.127 c1.901-1.902,4.984-1.902,6.887,0c1.901,1.901,1.901,4.985,0,6.886L68.324,61.439l53.128,53.128c1.901,1.901,1.901,4.984,0,6.886 c-1.902,1.902-4.985,1.902-6.887,0L61.438,68.326L8.312,121.453c-1.901,1.902-4.984,1.902-6.886,0 c-1.901-1.901-1.901-4.984,0-6.886l53.127-53.128L1.426,8.313L1.426,8.313z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer section">
+        <div class="wrapper">
+            <div class="footer__items">
+                <div class="footer__items__item">
+                    <a href="#" class="header__logo">
+                        <img src="img/logo.png" alt="logo">
+                    </a>
+                    <div class="desc">
+                        <p>Описание компании Описание компании Описание компании Описание компании Описание компании</p>
+                    </div>
+                    <a href="https://priliv.pro" class="priliv-link" rel="nofollow">
+                        <img src="img/priliv-logo.png" alt="">
+                        <span>Заказать сайт в Ялте</span>
+                    </a>
+                </div>
+                <div class="footer__items__item">
+                    <ul class="footer-menu">
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">contacts</a></li>
+                        <li><a href="#">123</a></li>
+                    </ul>
+                </div>
+                <div class="footer__items__item">
+                    <h3>Ваш личный менеджер</h3>
+                    <div class="manager">
+                        <img src="img/manager.jpg" alt="pic">
+                        <p>Менеджер</p>
+                    </div>
+                    <div class="header__contacts">
+                        <div class="time fa-block">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <div class="text">
+                                <p>Пн - Суб с 8:00 до 18:00</p>
+                                <p>Вс 9:00 до 15:00</p>
+                            </div>
+                        </div>
+                        <a href="tel:+7 978 824 31 65 " class="fa-block">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span>+7 978 824 31 65 </span>
+                        </a>
+                        <div class="fa-block">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>г. Симферополь,<br>Пр.Победы 147</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="modal" id="modal-callback">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="js-close-modal">&#215;</div>
+            </div>
+            <div class="modal-body">
+                <h3>Заказать обратный звонок</h3>
+                <div class="block-input">
+                    <input type="text" name="name" placeholder="Ваше имя" class="name">
+                </div>
+                <div class="block-input">
+                    <input type="text" name="phone" placeholder="" class="phone">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://kit.fontawesome.com/e0fc32bd82.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
